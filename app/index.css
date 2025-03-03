@@ -119,7 +119,7 @@ body {
 	background-color: var(--check-color-dark);
 }
 
-.tast-text::after {
+.tast-text:active {
 	text-decoration: line-through;
 	color: gray;
 }
