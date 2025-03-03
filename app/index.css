@@ -1,0 +1,131 @@
+body {
+	justify-items: center;
+	overflow: hidden;
+} 
+
+#main {
+	width: 70%;
+}
+
+#main-title-form {
+	font-size: 3rem;
+	font-weight: 800;
+	color: var(--primary-color);
+	margin: 1rem auto;
+	text-align: center;
+}
+
+
+/* Formulario */
+.form-input-container {
+	margin: 0.3rem auto;
+	color: var(--text-btn-color);
+	background-color: var(--primary-color);
+}
+
+#form {
+	background-color: var(--primary-color);
+	border-radius: 0.375rem;
+	border: 0.8rem solid var(--primary-color);
+	transition: all 1s ease-in-out;
+	display: flex;
+}
+
+#form-input-task {
+	font-size: 1rem;
+	font-weight: 700;
+	margin-right: 0.5rem;
+}
+
+#form-input-placeholder {
+	color: var(--text-color);
+	background-color: var(--text-btn-color);
+	border-radius: 0.375rem;
+	padding: 0.3rem;
+	width: 90%;
+}
+
+::placeholder {
+	font-weight: 500;
+	background-color: var(--text-btn-color);
+}
+
+#form-error-text {
+	font-size: 0.8rem;
+	font-weight: 500;
+	color: var(--error-color-text);
+}
+
+#form-btn {
+	background-color: var(--bg-color-items);
+	color: var(--bg-color-items-text);
+	border-radius: 2rem;
+	padding: 0.4rem ;
+	font-size: 0.8rem;
+	font-weight: 500;
+	transition: all 0.5s ease-in-out;
+}
+
+#form-btn:hover {
+	background-color: var(--bg-color-items-text-dark);
+	color: var(--text-color);
+}
+
+/* Lista de tareas */
+#task-list {
+	list-style: none;
+	width: 100%;
+	height: 25rem;
+	overflow-y: auto;
+	background-color: var(--bg-color-items);
+	padding: 0.8rem;
+	border-radius: 0.375rem;
+}
+
+.task-item {
+	border-bottom: 1px double var(--primary-color-darker);
+	margin: 0.5rem auto;
+	display: flex;
+	justify-content: space-between;
+}
+
+.task-delete-btn {
+	background-color: var(--error-color-text);
+	color: var(--text-color);
+	border-radius: 0.375rem;
+	font-size: 0.8rem;
+	margin-right: 0.5rem;
+	margin-bottom: 0.5rem;
+	transition: all 0.5s ease-in-out;
+}
+
+
+.task-delete-btn:hover {
+	background-color: var(--error-color-dark);
+}
+
+
+.task-check-btn {
+	background-color: var(--check-color);
+	color: var(--text-color);
+	border-radius: 0.375rem;
+	font-size: 0.8rem;
+	margin-left: 0.5rem;
+	margin-bottom: 0.5rem;
+	transition: all 0.5s ease-in-out;
+}
+
+.task-check-btn:hover {
+	background-color: var(--check-color-dark);
+}
+
+.tast-text::after {
+	text-decoration: line-through;
+	color: gray;
+}
+
+@media (min-width: 768px) {
+	#main {
+		width: 50%;
+	}
+}
