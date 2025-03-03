@@ -99,11 +99,9 @@ body {
 	transition: all 0.5s ease-in-out;
 }
 
-
 .task-delete-btn:hover {
 	background-color: var(--error-color-dark);
 }
-
 
 .task-check-btn {
 	background-color: var(--check-color);
@@ -119,7 +117,7 @@ body {
 	background-color: var(--check-color-dark);
 }
 
-.tast-text::after {
+.tast-text:active {
 	text-decoration: line-through;
 	color: gray;
 }
