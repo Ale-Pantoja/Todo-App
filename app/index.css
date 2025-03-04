@@ -52,7 +52,7 @@ body {
 
 #form-error-text {
 	font-size: 0.8rem;
-	font-weight: 500;
+	font-weight: 600;
 	color: var(--error-color-text);
 }
 
@@ -61,14 +61,14 @@ body {
 	color: var(--bg-color-items-text);
 	border-radius: 2rem;
 	padding: 0.4rem ;
-	font-size: 0.8rem;
+	font-size: 0.9rem;
 	font-weight: 500;
 	transition: all 0.5s ease-in-out;
 }
 
 #form-btn:hover {
 	background-color: var(--bg-color-items-text-dark);
-	color: var(--text-color);
+	color: var(--text-form-color);
 }
 
 /* Lista de tareas */
@@ -90,7 +90,7 @@ body {
 }
 
 .task-delete-btn {
-	background-color: var(--error-color-text);
+	background-color: var(--error-color-btn);
 	color: var(--text-color);
 	border-radius: 0.375rem;
 	font-size: 0.8rem;
@@ -101,6 +101,7 @@ body {
 
 .task-delete-btn:hover {
 	background-color: var(--error-color-dark);
+	color: var(--text-btn-color);
 }
 
 .task-check-btn {
@@ -115,6 +116,7 @@ body {
 
 .task-check-btn:hover {
 	background-color: var(--check-color-dark);
+	color: var(--text-btn-color);
 }
 
 #task-text-checked {
