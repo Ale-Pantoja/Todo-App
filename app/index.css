@@ -117,7 +117,7 @@ body {
 	background-color: var(--check-color-dark);
 }
 
-.tast-text:hover {
+.task-text:hover {
 	text-decoration: line-through;
 	color: gray;
 }
