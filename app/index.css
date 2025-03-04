@@ -117,7 +117,7 @@ body {
 	background-color: var(--check-color-dark);
 }
 
-.task-text:hover {
+#task-text-checked {
 	text-decoration: line-through;
 	color: gray;
 }
