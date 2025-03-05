@@ -58,7 +58,7 @@ body {
 
 #form-btn {
 	background-color: var(--primary-color);
-	color: var(--text-btn-color);
+	color: var(--text-form-color);
 	width: 4rem;
 	height: 4rem;
 	border-radius: 0.375rem;
@@ -67,8 +67,7 @@ body {
 }
 
 #form-btn:hover {
-	background-color: var(--bg-color-items-text-dark);
-	color: var(--text-form-color);
+	color: var(--text-form-color-dark);
 }
 
 /* Lista de tareas */
@@ -87,14 +86,15 @@ body {
 	margin: 0.5rem auto;
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 }
 
 .task-delete-btn {
 	background-color: var(--error-color-btn);
 	color: var(--text-color);
-	width: 4rem;
-	height: 4rem;
-	border: 2px solid var(--error-color-btn);
+	width: 11rem;
+	height: 3rem;
+	border: 3px solid var(--error-color-btn);
 	border-radius: 10rem;
 	margin: 0.3rem;
 	transition: all 0.5s ease-in-out;
@@ -102,22 +102,24 @@ body {
 
 .task-delete-btn:hover {
 	background-color: var(--error-color-dark);
+	border: 3px solid var(--error-color-dark);
 	color: var(--text-btn-color);
 }
 
 .task-check-btn {
 	background-color: var(--check-color);
 	color: var(--text-color);
-	width: 4rem;
-	height: 4rem;
+	width: 11rem;
+	height: 3rem;
 	border: 3px solid var(--check-color);
 	border-radius: 10rem;
-	margin: 0.3rem;
+	/* margin: 0.3rem; */
 	transition: all 0.5s ease-in-out;
 }
 
 .task-check-btn:hover {
 	background-color: var(--check-color-dark);
+	border: 3px solid var(--check-color-dark);
 	color: var(--text-btn-color);
 }
 
@@ -147,5 +149,17 @@ body {
 @media (min-width: 768px) {
 	#main {
 		width: 50%;
+	}
+
+	.task-check-btn {
+		width: 4rem;
+		height: 4rem;
+		border: 3px solid var(--check-color);
+	}
+
+	.task-delete-btn {
+		width: 4rem;
+		height: 4rem;
+		border: 3px solid var(--delete-color);
 	}
 }
