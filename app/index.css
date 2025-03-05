@@ -110,7 +110,7 @@ body {
 	color: var(--text-color);
 	width: 4rem;
 	height: 4rem;
-	border: 2px solid var(--check-color);
+	border: 3px solid var(--check-color);
 	border-radius: 10rem;
 	margin: 0.3rem;
 	transition: all 0.5s ease-in-out;
