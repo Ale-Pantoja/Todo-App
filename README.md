@@ -52,5 +52,3 @@ Estos archivos incluye:
 Este archivo incluye:
 - Estilos para el contenedor principal y los elementos de la lista.
 - Estilos responsivos que permiten que la aplicación se vea bien en dispositivos móviles.
-
-  
