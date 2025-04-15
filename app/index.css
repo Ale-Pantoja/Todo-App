@@ -43,11 +43,11 @@ body {
 }
 
 .input-valid {
-	outline: 3px solid green;
+	outline: 4px solid green;
 }
   
 .input-invalid {
-	outline : 1px solid red;
+	outline : 4px solid red;
 }
 
 #form-input-placeholder {

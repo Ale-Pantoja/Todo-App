@@ -20,7 +20,7 @@
 :root {
 	color-scheme: light dark;
 	--bg-color: light-dark(white, black);
-	--primary-color: light-dark(#6366f1, #9ba5ff);
+	--primary-color: light-dark(#6366f1, #8f9aff);
 	--primary-color-placeholder: light-dark(#9597ee, #8284ff);
 	--primary-color-darker: light-dark(#4849ab, #9c9cc0);
 	--text-color: light-dark(#262626, #ededed);
