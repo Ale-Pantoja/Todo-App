@@ -1,9 +1,14 @@
 body {
-	justify-items: center;
+	display: flex;
+    flex-direction: column;
+    min-height: 99vh; 
+    justify-content: space-between; 
+    align-items: center; 
 	overflow: hidden;
 } 
 
 #main {
+	flex: 1;
 	width: 70%;
 }
 
@@ -32,8 +37,9 @@ body {
 }
 
 #form-input-task {
-	font-size: 1rem;
-	font-weight: 700;
+	color: var(--text-color);
+	background-color: var(--text-btn-color);
+	border-radius: 0.375rem;
 }
 
 .input-valid {
@@ -45,11 +51,12 @@ body {
 }
 
 #form-input-placeholder {
-	color: var(--text-color);
 	background-color: var(--text-btn-color);
 	border-radius: 0.375rem;
-	padding: 0.3rem;
-	width: 90%;
+	width: 40vw; 
+    padding: 0.5rem;
+	margin: 0.3rem;
+	align-items: center;
 }
 
 .form-error-text {
@@ -83,13 +90,13 @@ body {
 	width: 100%;
 	height: 25rem;
 	overflow-y: auto;
-	background-color: var(--bg-color-items);
 	padding: 0.8rem;
 	border-radius: 0.375rem;
 }
 
 .task-item {
-	border-bottom: 1px double var(--primary-color-darker);
+	background-color: var(--text-btn-color);
+	border-radius: 0.375rem;
 	margin: 0.5rem auto;
 	display: flex;
 	justify-content: space-between;
@@ -97,33 +104,35 @@ body {
 }
 
 .task-delete-btn {
-	background-color: var(--error-color-btn);
-	color: var(--text-color);
-	width: 4rem;
-	border: 3px solid var(--error-color-btn);
-	border-radius: 0.380rem;
-	margin: 0.3rem;
+	background-color: var(--text-btn-color);
+	border: 3px solid var(--text-btn-color);
+	border-radius: 0.375rem;
+	color: var(--error-color-btn);
+	width: 3rem;
+	margin: 0.5rem;
 	transition: all 0.5s ease-in-out;
 }
 
 .task-delete-btn:hover {
 	background-color: var(--error-color-dark);
 	border: 3px solid var(--error-color-dark);
+	border-radius: 0.375rem;
 	color: var(--text-btn-color);
 }
 
 .task-check-btn {
-	background-color: var(--check-color);
-	color: var(--text-color);
+	background-color: var(--text-btn-color);
+	border: 3px solid var(--text-btn-color);
+	border-radius: 0.375rem;
+	color: var(--check-color);
 	width: 4rem;
-	border: 3px solid var(--check-color);
-	border-radius: 0.380rem;
-	margin: 0.3rem;
+	margin: 0.5rem;
 	transition: all 0.5s ease-in-out;
 }
 
 .task-check-btn:hover {
 	background-color: var(--check-color-dark);
+	border-radius: 0.375rem;
 	border: 3px solid var(--check-color-dark);
 	color: var(--text-btn-color);
 }
@@ -154,24 +163,34 @@ body {
 	font-size: 0.9rem;
 	font-weight: 600;
 } 
+/* Footer */
+
+footer {
+	bottom: 100%;
+	display: flex;
+	justify-content: center;
+	margin: 1rem;
+	align-items: center;
+}
 
 
+#contact-btn-github {
+	color: var(--primary-color);
+}
+
+/* Adaptacion pc */
 @media (min-width: 768px) {
 	#main {
 		width: 50%;
 	}
 
 	.task-check-btn {
-		width: 4rem;
-		height: 4rem;
+		width: 3rem;
 		padding: 0.2rem;
-		border: 3px solid var(--check-color);
 	}
 
 	.task-delete-btn {
-		width: 4rem;
-		height: 4rem;
+		width: 3rem;
 		padding: 0.3rem;
-		border: 3px solid var(--delete-color);
 	}
 }
