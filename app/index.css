@@ -5,8 +5,10 @@ body {
     justify-content: space-between; 
     align-items: center; 
 	overflow: hidden;
+	background-color: var(--bg-color);
 } 
 
+/* Contenido principal */
 #main {
 	flex: 1;
 	width: 70%;
@@ -160,12 +162,36 @@ body {
 	border-radius: 0.375rem;
 }
 
+/* Contador de tareas */
 #task-counter-total,
 #task-counter-completas,
 #task-counter-incompletas {
 	font-size: 0.9rem;
 	font-weight: 600;
 } 
+
+/* Boton inicio */
+#btn-div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#home-btn {
+	margin: 2rem;
+	background-color: var(--bg-color);
+	color: var(--primary-color);
+	height: 1.6rem;
+	width: 1.6rem;
+	transition: all 0.5s ease-in-out;
+}
+
+#home-btn:hover {
+	height: 2rem;
+	width: 2rem;
+	color: var(--primary-color-placeholder);
+}
+
 /* Footer */
 
 footer {

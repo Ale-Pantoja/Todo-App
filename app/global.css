@@ -19,12 +19,12 @@
 /* Variables de colores y Temas*/
 :root {
 	color-scheme: light dark;
-	--bg-color: light-dark(white, black);
+	--bg-color: light-dark(white, #0d0b16);
 	--primary-color: light-dark(#6366f1, #8f9aff);
-	--primary-color-placeholder: light-dark(#9597ee, #8284ff);
+	--primary-color-placeholder: light-dark(#9597ee, #696cfc);
 	--primary-color-darker: light-dark(#4849ab, #9c9cc0);
 	--text-color: light-dark(#262626, #ededed);
-	--text-btn-color: light-dark(#ededed, #262626);
+	--text-btn-color: light-dark(#ededed, #1c1c2b);
 	--text-form-color: light-dark(#e9eaff, #373891);
 	--text-form-color-dark: light-dark(#bbbce5, #0e10b2);
 	--border-color: light-dark(#c9caca, #464646);
