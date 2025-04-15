@@ -48,6 +48,7 @@ inputTask.addEventListener('input', e => {
    renderFormBtnValidationStatus();
 });
 
+// Agrega una nueva tarea
 form.addEventListener('submit', e => {
   e.preventDefault();
   const newTask = {
@@ -60,7 +61,7 @@ form.addEventListener('submit', e => {
   TaskModule.renderTasks(taskList);
 });
 
-
+// Escuchar el evento click 
 taskList.addEventListener('click', e => {
   const deleteBtn = e.target.closest('.task-delete-btn');
   const checkedBtn = e.target.closest('.task-check-btn');
@@ -74,25 +75,29 @@ taskList.addEventListener('click', e => {
   }
 
   if (checkedBtn) {
-      // 1. Obtener el id
+      // Obtener el id de la tarea
       const li = checkedBtn.parentElement;
-      // 2. Obtener ambos inputs
+      // Obtener el input
       const taskInputText = li.querySelector('p');        
       const status = li.getAttribute('status');
   
       if (status === 'disabled-inputs') {
+      // Cambio el estado del input 
         li.setAttribute('status', 'enabled-inputs');
+      // Cambio el icono del checkBtn 
         checkedBtn.innerHTML = TaskModule.checkedIcon;
+      // Agrega la clase del texto chequeado 
         taskInputText.classList.remove('task-text');
         taskInputText.classList.add('task-text-checked'); 
-        isChecked = true;
 
+        // Actualizo la tarea
         const checkedTask = {
           id: li.id,
           isChecked: isChecked,
           task: taskInputText.value
         }
-  
+
+        // La guardo en el navegador  
         if (checkedTask.value) {
         TaskModule.updateTask(checkedTask);
         TaskModule.saveTaskInBrowser();
@@ -101,17 +106,22 @@ taskList.addEventListener('click', e => {
       }
   
       if (status === 'enabled-inputs') {
+      // Cambio el estado del input 
+        li.setAttribute('status', 'disabled-inputs');        
+      // Cambio el icono del checkBtn 
         checkedBtn.innerHTML = TaskModule.checkIcon;
+      // Agrega la clase del texto chequeado
         taskInputText.classList.add('task-text');
         taskInputText.classList.remove('task-text-checked');
-        isChecked = false
   
+        // Actualizo la tarea
         const checkedTask = {
           id: li.id,
           isChecked: isChecked,
           task: taskInputText.value
         }
-  
+
+        // La guardo en el navegador
         if (checkedTask.value) {
         TaskModule.updateTask(checkedTask);
         TaskModule.saveTaskInBrowser();
@@ -122,8 +132,6 @@ taskList.addEventListener('click', e => {
 });
 
 window.onload = () => {
-  // 1. Obtener la lista de localStorage
   TaskModule.getTasksFromBrowser();
-  // 2. Renderizar las tareas
   TaskModule.renderTasks(taskList);
 }

@@ -77,7 +77,7 @@ const renderTasks = (list) => {
 }
 
 /**
- * Guarda el array de los contactos en el navegador
+ * Guarda el array de las tareas en el navegador
  */
 const saveTaskInBrowser = () => {
   localStorage.setItem('tasks', JSON.stringify(tasks));
@@ -85,27 +85,27 @@ const saveTaskInBrowser = () => {
 
 
 /**
- * Obtener los contactos del navegador y guardarlos en el array.
+ * Obtener las tareas del navegador y guardarlos en el array.
  */
 const getTasksFromBrowser = () => {
   // 1. Obtener la lista de localStorage
   const taskLocalJson = localStorage.getItem('tasks');
   // 2. Transformar de JSON a JavaScript
   const taskLocal = JSON.parse(taskLocalJson);
-  // 3. Guardar los contactos
+  // 3. Guardar las tareas
   tasks = taskLocal ?? [];
 }
 
 /**
- * Elimina un contacto del array de contactos
- * @param {string} id El id del contacto a eliminar
+ * Elimina un contacto del array de tareas
+ * @param {string} id El id del tareas a eliminar
  */
 const removeTask = (id) => {
   tasks = tasks.filter(task => task.id !== id);
 }
 
 /**
- * Actualizar un contacto
+ * Actualizar una tarea
  * @param {Task} checkedTask tarea chequeada
 */
 const checkedTask = (checkedTask) => {
