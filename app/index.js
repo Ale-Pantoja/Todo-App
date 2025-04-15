@@ -56,6 +56,7 @@ form.addEventListener('submit', e => {
     isChecked: false,
     Task: inputTask.value,
   }
+  inputTask.value = '';
   TaskModule.addTask(newTask);
   TaskModule.saveTaskInBrowser();
   TaskModule.renderTasks(taskList);
@@ -93,7 +94,7 @@ taskList.addEventListener('click', e => {
         // Actualizo la tarea
         const checkedTask = {
           id: li.id,
-          isChecked: isChecked,
+          isChecked: true,
           task: taskInputText.value
         }
 
@@ -101,7 +102,7 @@ taskList.addEventListener('click', e => {
         if (checkedTask.value) {
         TaskModule.updateTask(checkedTask);
         TaskModule.saveTaskInBrowser();
-        TaskModule.renderContacts(taskList);
+        TaskModule.renderContacts(taskList);    
         } 
       }
   
@@ -117,7 +118,7 @@ taskList.addEventListener('click', e => {
         // Actualizo la tarea
         const checkedTask = {
           id: li.id,
-          isChecked: isChecked,
+          isChecked: false,
           task: taskInputText.value
         }
 
@@ -125,11 +126,13 @@ taskList.addEventListener('click', e => {
         if (checkedTask.value) {
         TaskModule.updateTask(checkedTask);
         TaskModule.saveTaskInBrowser();
-        TaskModule.renderContacts(taskList);
+        TaskModule.renderContacts(taskList);      
         } 
       }
     }
 });
+
+
 
 window.onload = () => {
   TaskModule.getTasksFromBrowser();
