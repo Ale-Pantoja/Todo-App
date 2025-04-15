@@ -40,7 +40,9 @@ body {
 }
 
 #nav-title {
+	font-family: 'Montserrat';
 	font-size: 2rem;
+	font-weight: 400;
 	color: var(--primary-color);
 }
 
