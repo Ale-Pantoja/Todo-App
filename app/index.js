@@ -49,19 +49,14 @@ inputTask.addEventListener('input', e => {
 });
 
 form.addEventListener('submit', e => {
-  //1. Prevenir el evento predefinido
   e.preventDefault();
-  // 2. Crear la estructura de la tarea
   const newTask = {
     id: crypto.randomUUID(),
     isChecked: false,
     Task: inputTask.value,
   }
-  // 3. Guardar la tarea en el array
   TaskModule.addTask(newTask);
-  // 4. Guardar la tarea en el navegador
   TaskModule.saveTaskInBrowser();
-  // 5. Mostrar tareas en el html
   TaskModule.renderTasks(taskList);
 });
 
@@ -72,13 +67,9 @@ taskList.addEventListener('click', e => {
   const isChecked = false;
 
   if (deleteBtn) {
-    // 1. Obtener el id
     const li = deleteBtn.parentElement;
-    // 2. Eliminar la tarea del array
     TaskModule.removeTask(li.id);
-    // 3. Guardar los contactos en el navegador
     TaskModule.saveTaskInBrowser();
-    // 4. Renderizar los contactos
     TaskModule.renderTasks(taskList);
   }
 
@@ -90,20 +81,12 @@ taskList.addEventListener('click', e => {
       const status = li.getAttribute('status');
   
       if (status === 'disabled-inputs') {
-        // 1. Cambiar el status a enabled-inputs
         li.setAttribute('status', 'enabled-inputs');
         checkedBtn.innerHTML = TaskModule.checkedIcon;
         taskInputText.classList.remove('task-text');
         taskInputText.classList.add('task-text-checked'); 
-      }
-  
-      if (status === 'enabled-inputs') {
-        // 1. Cambiar el status a disabled-inputs
-        checkedBtn.innerHTML = TaskModule.checkIcon;
-        taskInputText.classList.add('task-text');
-        taskInputText.classList.remove('task-text-checked');
-  
-        // 4. Actualizar el contacto
+        isChecked = true;
+
         const checkedTask = {
           id: li.id,
           isChecked: isChecked,
@@ -112,9 +95,26 @@ taskList.addEventListener('click', e => {
   
         if (checkedTask.value) {
         TaskModule.updateTask(checkedTask);
-          // 5. Guardar en el navegador
         TaskModule.saveTaskInBrowser();
-          // 6. Mostrar en el html
+        TaskModule.renderContacts(taskList);
+        } 
+      }
+  
+      if (status === 'enabled-inputs') {
+        checkedBtn.innerHTML = TaskModule.checkIcon;
+        taskInputText.classList.add('task-text');
+        taskInputText.classList.remove('task-text-checked');
+        isChecked = false
+  
+        const checkedTask = {
+          id: li.id,
+          isChecked: isChecked,
+          task: taskInputText.value
+        }
+  
+        if (checkedTask.value) {
+        TaskModule.updateTask(checkedTask);
+        TaskModule.saveTaskInBrowser();
         TaskModule.renderContacts(taskList);
         } 
       }
