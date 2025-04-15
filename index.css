@@ -113,6 +113,13 @@ body {
 	box-shadow: 0.5px 0.5px 20px 0.5px var(--primary-color);
 }
 
+/* Footer */
+
+footer {
+	display: flex;
+	align-items: center;
+}
+
 /* Adaptacion */
 @media (min-width: 768px) {
 	#nav-button {
