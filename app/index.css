@@ -100,7 +100,7 @@ body {
 .task-item {
 	background-color: var(--text-btn-color);
 	border-radius: 0.375rem;
-	margin: 0.5rem auto;
+	margin: 0.3rem;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -111,8 +111,8 @@ body {
 	border: 3px solid var(--text-btn-color);
 	border-radius: 0.375rem;
 	color: var(--error-color-btn);
-	width: 3rem;
-	margin: 0.5rem;
+	width: 2.6rem;
+	margin: 0.3rem;
 	transition: all 0.5s ease-in-out;
 }
 
@@ -128,8 +128,8 @@ body {
 	border: 3px solid var(--text-btn-color);
 	border-radius: 0.375rem;
 	color: var(--check-color);
-	width: 4rem;
-	margin: 0.5rem;
+	width: 3rem;
+	margin: 0.3rem;
 	transition: all 0.5s ease-in-out;
 }
 
@@ -154,7 +154,7 @@ body {
 
 #task-counter {
 	display: flex;
-	margin: 0.3rem auto;
+	margin: 0.3rem;
 	justify-content: space-around;
 	background-color: var(--primary-color);
 	color: var(--text-btn-color);
@@ -178,11 +178,11 @@ body {
 }
 
 #home-btn {
-	margin: 2rem;
+	margin: 0.5rem;
 	background-color: var(--bg-color);
 	color: var(--primary-color);
-	height: 1.6rem;
-	width: 1.6rem;
+	height: 1.5rem;
+	width: 1.5rem;
 	transition: all 0.5s ease-in-out;
 }
 
