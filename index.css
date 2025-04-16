@@ -101,6 +101,7 @@ body {
 
 #main-desc-text {
 	text-align: justify;
+	font-size: 1rem;
 }
 
 #main-desc-btn {
@@ -159,7 +160,7 @@ footer {
 	}
 
 	#main-desc-text {
-		font-size: 1.5rem;
+		font-size: 1.2rem;
 	}
 
 	#main-desc-btn {
