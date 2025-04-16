@@ -111,7 +111,7 @@ body {
 	border: 3px solid var(--text-btn-color);
 	border-radius: 0.375rem;
 	color: var(--error-color-btn);
-	width: 2.6rem;
+	width: 2rem;
 	margin: 0.3rem;
 	transition: all 0.5s ease-in-out;
 }
@@ -128,7 +128,7 @@ body {
 	border: 3px solid var(--text-btn-color);
 	border-radius: 0.375rem;
 	color: var(--check-color);
-	width: 3rem;
+	width: 2rem;
 	margin: 0.3rem;
 	transition: all 0.5s ease-in-out;
 }
@@ -202,9 +202,19 @@ footer {
 	align-items: center;
 }
 
+#footer-text {
+	font-size: 0.8rem;
+	color: var(--primary-color-darker);
+}
 
 #contact-btn-github {
 	color: var(--primary-color);
+}
+
+#github-icon {
+	height: 1.3rem;
+	width: 1.3rem;
+	margin-right: 0.2rem;
 }
 
 /* Adaptacion pc */
@@ -214,12 +224,12 @@ footer {
 	}
 
 	.task-check-btn {
-		width: 3rem;
+		width: 2.3rem;
 		padding: 0.2rem;
 	}
 
 	.task-delete-btn {
-		width: 3rem;
-		padding: 0.3rem;
+		width: 2.3rem;
+		padding: 0.2rem;
 	}
 }
