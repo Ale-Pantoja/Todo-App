@@ -39,11 +39,19 @@ body {
 	background-color: var(--primary-color-darker);
 }
 
+#nav-logo {
+	height: 2rem;
+	width: 2rem;
+	align-items: center;
+}
+
 #nav-title {
 	font-family: 'Montserrat';
-	font-size: 2rem;
+	font-size: 1.3rem;
 	font-weight: 400;
 	color: var(--primary-color);
+	display: flex;
+	align-items: center;
 	transition: all 2s ease-in-out; 
 }
 
