@@ -8,6 +8,10 @@ const taskList = document.querySelector('#task-list');
 
 // Validaciones
 let isInputTaskValid = false;
+
+// Expresiones regulares 
+const TASK_REGEX = /^[a-zA-Z0-9].{0,79}$/;
+
  
 // Funciones 
 
@@ -16,10 +20,10 @@ const renderInputValidationStatus = (input) => {
     const formErrorText = input.nextElementSibling;
     
     if (inputTask.value === '') {
-      // Quitar los colores y no mostrar el texto de ayuda.
-      input.classList.remove('input-invalid');
+      // No mostrar el texto de ayuda.
+      input.classList.add('input-invalid');
       input.classList.remove('input-valid');
-      formErrorText?.classList.add('show-error-text');
+      formErrorText?.classList.add('show-error-text');      
     } else if (isInputTaskValid) {
       // Ponerse verde y ocultar el texto de ayuda.
       input.classList.add('input-valid');
@@ -43,7 +47,7 @@ const renderFormBtnValidationStatus = () => {
   
   // Eventos
 inputTask.addEventListener('input', e => {
-   isInputTaskValid = inputTask.value;
+   isInputTaskValid = TASK_REGEX.test(inputTask.value);
    renderInputValidationStatus(inputTask, isInputTaskValid);
    renderFormBtnValidationStatus();
 });
@@ -66,7 +70,6 @@ form.addEventListener('submit', e => {
 taskList.addEventListener('click', e => {
   const deleteBtn = e.target.closest('.task-delete-btn');
   const checkedBtn = e.target.closest('.task-check-btn');
-  const isChecked = false;
 
   if (deleteBtn) {
     const li = deleteBtn.parentElement;
@@ -90,19 +93,18 @@ taskList.addEventListener('click', e => {
       // Agrega la clase del texto chequeado 
         taskInputText.classList.remove('task-text');
         taskInputText.classList.add('task-text-checked'); 
-
         // Actualizo la tarea
         const checkedTask = {
           id: li.id,
           isChecked: true,
-          task: taskInputText.value
+          task: taskInputText.textContent
         }
 
         // La guardo en el navegador  
         if (checkedTask.value) {
         TaskModule.updateTask(checkedTask);
         TaskModule.saveTaskInBrowser();
-        TaskModule.renderContacts(taskList);    
+        TaskModule.renderTasks(taskList);    
         } 
       }
   
@@ -114,19 +116,19 @@ taskList.addEventListener('click', e => {
       // Agrega la clase del texto chequeado
         taskInputText.classList.add('task-text');
         taskInputText.classList.remove('task-text-checked');
-  
+        
         // Actualizo la tarea
         const checkedTask = {
           id: li.id,
           isChecked: false,
-          task: taskInputText.value
+          task: taskInputText.textContent
         }
 
         // La guardo en el navegador
         if (checkedTask.value) {
         TaskModule.updateTask(checkedTask);
         TaskModule.saveTaskInBrowser();
-        TaskModule.renderContacts(taskList);      
+        TaskModule.renderTasks(taskList);      
         } 
       }
     }

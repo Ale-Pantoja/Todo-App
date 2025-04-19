@@ -49,10 +49,11 @@ const renderTasks = (list) => {
     // 3. Agregar el id al li
     li.id = task.id;
     // 3.1 Establecer el estatus
-    li.setAttribute('status', 'disabled-inputs');
+    li.setAttribute('status', task.isChecked ? 'enabled-inputs' : 'disabled-inputs');
     // 4. Crear div del input
+    const taskTextClass = task.isChecked ? 'task-text-checked' : 'task-text';
     const inputsDiv = `
-      <p class="task-text">${task.Task}</p>
+      <p class="${taskTextClass}">${task.Task}</p>
     `;
     // 5. Crear div de los botones
     const btnsDiv = `
@@ -63,7 +64,7 @@ const renderTasks = (list) => {
     </button>
     ${inputsDiv}
     <button class="task-check-btn">
-      ${checkIcon}                        
+      ${task.isChecked ? checkedIcon : checkIcon}                        
   </button>
     `;
     // 6. Crear la estructura del li
@@ -106,19 +107,19 @@ const removeTask = (id) => {
 
 /**
  * Actualizar una tarea
- * @param {Task} checkedTask tarea chequeada
+ * @param {Task} updateTask tarea chequeada
 */
-const checkedTask = (checkedTask) => {
-  // task = task.map(task => 
-  //   task.id === checkedTask.id ? checkedTask : task
-  // );
-  tasks = tasks.map(task => {
-    if (task.id === checkedTask.id) {
-      return checkedTask;
-    } else {
-      return task;
-    }
-  });
+const updateTask = (updateTask) => {
+  tasks = tasks.map(task => 
+    task.id === updateTask.id ? updateTask : task
+  );
+  // tasks = tasks.map(task => {
+  //   if (task.id === updateTask.id) {
+  //     return updateTask;
+  //   } else {
+  //     return task;
+  //   }
+  // });
 }
 
 export {
@@ -127,7 +128,7 @@ export {
   saveTaskInBrowser,
   getTasksFromBrowser,
   removeTask,
-  checkedTask,
+  updateTask,
   checkIcon,
   checkedIcon
 }
