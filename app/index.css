@@ -46,11 +46,11 @@ body {
 }
 
 .input-valid {
-	outline: 4px solid green;
+	outline: 3px solid green;
 }
   
 .input-invalid {
-	outline : 4px solid red;
+	outline : 3px solid var(--error-color-text);
 }
 
 #form-input-placeholder {
@@ -104,6 +104,7 @@ body {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	word-break: break-word;
 }
 
 .task-delete-btn {
@@ -112,6 +113,7 @@ body {
 	border-radius: 0.375rem;
 	color: var(--error-color-btn);
 	width: 2rem;
+	height: 2.1rem;
 	margin: 0.3rem;
 	transition: all 0.5s ease-in-out;
 }
@@ -129,6 +131,7 @@ body {
 	border-radius: 0.375rem;
 	color: var(--check-color);
 	width: 2rem;
+	height: 2.1rem;
 	margin: 0.3rem;
 	transition: all 0.5s ease-in-out;
 }
@@ -142,6 +145,8 @@ body {
 
 .task-text {
 	margin: 0.5rem;
+	text-align: left;
+    width: fit-content;
 	transition: all 0.4s ease-in-out;
 }
 
