@@ -57,8 +57,8 @@ form.addEventListener('submit', e => {
   e.preventDefault();
   const newTask = {
     id: crypto.randomUUID(),
-    isChecked: false,
     Task: inputTask.value,
+    isChecked: false
   }
   inputTask.value = '';
   TaskModule.addTask(newTask);
@@ -96,16 +96,14 @@ taskList.addEventListener('click', e => {
         // Actualizo la tarea
         const checkedTask = {
           id: li.id,
-          isChecked: true,
-          task: taskInputText.textContent
+          Task: taskInputText.textContent,
+          isChecked: true
         }
 
         // La guardo en el navegador  
-        if (checkedTask.value) {
         TaskModule.updateTask(checkedTask);
         TaskModule.saveTaskInBrowser();
-        TaskModule.renderTasks(taskList);    
-        } 
+        TaskModule.renderTasks(taskList);
       }
   
       if (status === 'enabled-inputs') {
@@ -120,16 +118,14 @@ taskList.addEventListener('click', e => {
         // Actualizo la tarea
         const checkedTask = {
           id: li.id,
-          isChecked: false,
-          task: taskInputText.textContent
+          Task: taskInputText.textContent,
+          isChecked: false
         }
 
         // La guardo en el navegador
-        if (checkedTask.value) {
         TaskModule.updateTask(checkedTask);
         TaskModule.saveTaskInBrowser();
         TaskModule.renderTasks(taskList);      
-        } 
       }
     }
 });
