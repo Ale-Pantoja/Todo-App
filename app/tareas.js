@@ -111,15 +111,9 @@ const removeTask = (id) => {
 */
 const updateTask = (updateTask) => {
   tasks = tasks.map(task => 
-    task.id === updateTask.id ? updateTask : task
+    task.id === updateTask.id ? {...task, isChecked: updateTask.isChecked } : task
   );
-  // tasks = tasks.map(task => {
-  //   if (task.id === updateTask.id) {
-  //     return updateTask;
-  //   } else {
-  //     return task;
-  //   }
-  // });
+  saveTaskInBrowser();
 }
 
 export {
