@@ -10,7 +10,7 @@ const taskList = document.querySelector('#task-list');
 let isInputTaskValid = false;
 
 // Expresiones regulares 
-const TASK_REGEX = /^[a-zA-Z0-9].{0,79}$/;
+const TASK_REGEX = /^[a-zA-Z0-9].{0,149}$/;
 
  
 // Funciones 
