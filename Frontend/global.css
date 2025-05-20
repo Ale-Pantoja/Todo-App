@@ -5,15 +5,13 @@
 	border-width: 0;
 	border-style: solid;
 	border-color: #b1bed1;
-	font-size: 0.9rem; 
+	font-size: 0.85rem; 
 	margin: 0;
 	padding: 0;
 	font-family: "Raleway", serif;
 	font-optical-sizing: auto;
 	font-weight: 400;
 	font-style: normal;
-	margin: 0; 
-    padding: 0; 
 }
 
 /* Variables de colores y Temas*/
@@ -21,15 +19,15 @@
 	color-scheme: light dark;
 	--bg-color: light-dark(white, #0d0b16);
 	--primary-color: light-dark(#6366f1, #8f9aff);
-	--primary-color-placeholder: light-dark(#9597ee, #696cfc);
-	--primary-color-darker: light-dark(#4849ab, #9c9cc0);
+	--primary-color-placeholder: light-dark(#9597ee, #8284ff);
+	--primary-color-darker: light-dark(#4849ab, #6366f1);
 	--text-color: light-dark(#262626, #ededed);
-	--text-btn-color: light-dark(#ededed, #1c1c2b);
+	--text-btn-color: light-dark(#ededed, #262626);
 	--text-form-color: light-dark(#e9eaff, #373891);
 	--text-form-color-dark: light-dark(#bbbce5, #0e10b2);
 	--border-color: light-dark(#c9caca, #464646);
-	--bg-color-items: light-dark(#9597ee, #373891);
-	--bg-color-items-text: light-dark(#373891, #9597ee);
+	--bg-color-items: light-dark(#c1c3f7, #373891);
+	--bg-color-items-text: light-dark(#373891, #c1c3f7);
 	--bg-color-items-text-dark: light-dark(#2f3072, #797cce);
 	--error-color-text: light-dark(#f38989, #ad3636);
 	--error-color-btn: light-dark(#b44444, #ad3636);
@@ -38,4 +36,3 @@
 	--check-color-dark: light-dark(#185847, #11a373);
 	--content-width: 80rem;
 }
-

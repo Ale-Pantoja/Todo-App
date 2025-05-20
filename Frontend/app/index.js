@@ -8,10 +8,9 @@ const taskList = document.querySelector('#task-list');
 
 // Validaciones
 let isInputTaskValid = false;
-
+ 
 // Expresiones regulares 
 const TASK_REGEX = /^[a-zA-Z0-9].{0,79}$/;
-
  
 // Funciones 
 
@@ -53,28 +52,25 @@ inputTask.addEventListener('input', e => {
 });
 
 // Agrega una nueva tarea
-form.addEventListener('submit', e => {
+form.addEventListener('submit', async e => {
   e.preventDefault();
-  const newTask = {
-    id: crypto.randomUUID(),
+  if (!isInputTaskValid) return;
+  await TaskModule.addTask({
     Task: inputTask.value,
     isChecked: false
-  }
+  });
   inputTask.value = '';
-  TaskModule.addTask(newTask);
-  TaskModule.saveTaskInBrowser();
   TaskModule.renderTasks(taskList);
 });
 
 // Escuchar el evento click 
-taskList.addEventListener('click', e => {
+taskList.addEventListener('click', async e => {
   const deleteBtn = e.target.closest('.task-delete-btn');
   const checkedBtn = e.target.closest('.task-check-btn');
 
   if (deleteBtn) {
     const li = deleteBtn.parentElement;
-    TaskModule.removeTask(li.id);
-    TaskModule.saveTaskInBrowser();
+    await TaskModule.removeTask(li.id);
     TaskModule.renderTasks(taskList);
   }
 
@@ -101,8 +97,7 @@ taskList.addEventListener('click', e => {
         }
 
         // La guardo en el navegador  
-        TaskModule.updateTask(checkedTask);
-        TaskModule.saveTaskInBrowser();
+        await TaskModule.updateTask(checkedTask);
         TaskModule.renderTasks(taskList);
       }
   
@@ -123,16 +118,14 @@ taskList.addEventListener('click', e => {
         }
 
         // La guardo en el navegador
-        TaskModule.updateTask(checkedTask);
-        TaskModule.saveTaskInBrowser();
+        await TaskModule.updateTask(checkedTask);
         TaskModule.renderTasks(taskList);      
       }
     }
 });
 
 
-
-window.onload = () => {
-  TaskModule.getTasksFromBrowser();
+window.onload = async () => {
+  await TaskModule.getTaskFromDb();
   TaskModule.renderTasks(taskList);
 }
